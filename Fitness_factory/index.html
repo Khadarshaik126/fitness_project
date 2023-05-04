@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Factory | health & wellness</title>
+
+    <!-- css links -->
+
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap");
+
+:root{
+    
+    /* jungle-green */
+    --primary:#2A9D8F;
+    --white: #fff;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; 
+    border: none;
+    text-decoration: none;
+    /* text-transform: capitalize; */
+    list-style: none;
+    transition: .2s linear;
+}
+
+body{
+    background: #080b10;
+    color: var(--white);
+}
+
+section{
+    padding: 5rem 7%;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--primary);
+    border-radius: 5rem;
+}
+
+.heading{
+    font-size: 4rem;
+    color: var(--primary);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: 6rem;
+}
+
+.btn{
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: var(--box-shadow);
+    padding: .7rem 3rem;
+    border-radius: 5rem;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.btn::before,
+.btn::after{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    content: '';
+    background: #107166;
+    z-index: -1;
+    transition: .1s linear;
+}
+
+.btn::before{
+    left: 0;
+}
+
+.btn::after{
+    right: 0;
+}
+
+.btn:hover:before,
+.btn:hover::after{
+    width: 100%;
+}
+
+
+/* Navbar */
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 9%;
+}
+
+.header.active{
+    background: #040608;
+    padding: 2rem 9%;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--white);
+}
+
+.header .logo i{
+    padding-right: .5rem;
+    color: var(--primary);
+}
+
+.header .navbar a{
+    font-size: 2rem;
+    color: var(--white);
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover{
+    color: var(--primary);
+}
+
+.header .navbar a.active,
+.header .navbar a:hover{
+    color: var(--primary);
+}
+
+
+#menu{
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    color: var(--primary);
+    cursor: pointer;
+    display: none;
+}
+
+
+/* home */
+
+.home{
+    background-image: url("..img/mainbg.png");
+    background-repeat: no-repeat;
+    min-height: 110vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+}
+
+.home .content{
+    max-width: 55rem;
+}
+
+.home .content h3{
+    /* 7 is default */
+    font-size: 4.6rem; 
+    color: var(--white);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.home .content h3 span{
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.home .content p{
+    font-size: 1.4rem;
+    color: var(--white);
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+
+/* about */
+
+.about .row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about .row .content{
+    flex: 1 1 40rem;
+}
+
+.about .row .content span{
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.about .row .content h3{
+    font-size: 2.5rem;
+    color: var(--white);
+    padding: 1rem 0;
+}
+
+.about .row .content p{
+    font-size: 1.4rem;
+    color: var(--white);
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.about .row .content ul li{
+    font-size: 1.7rem;
+    color: var(--white);
+    padding-top: 1.5rem;
+}
+
+.about .row .content ul li i{
+    color: var(--primary);
+    padding-right: 1rem;
+}
+
+.about .row .content .btn{
+    margin: 3rem 0;
+}
+
+.about .row .image{
+    flex: 1 1 30rem;
+}
+
+.about .row .image img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* services */
+
+.services .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.services .box-container .box{
+    height: 25rem;
+    flex: 1 1 30rem;
+    border: 0.2rem solid var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.services .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.services .box-container .box .content{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    height: 100%;
+    width: 100%;
+    background: rgba(253, 253, 253, 0.878);
+    padding: 2rem;
+    padding-top: 5rem;
+    text-align: center;
+}
+
+.services .box-container .box:hover .content{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.services .box-container .box .content h3{
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.services .box-container .box .content p{
+    font-size: 1.5rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+
+
+/* membership */
+.membership .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.membership .box-container .box{
+    padding: 2rem;
+    text-align: center;
+    border: 0.1rem solid rgba(255, 255, 255, .2);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+}
+
+.membership .box-container .box h3{
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: var(--primary);
+    padding-top: 1rem;
+}
+
+.membership .box-container .box .price{
+    font-size: 6rem;
+    padding-top: 1rem;
+    font-weight: bolder;
+}
+
+.membership .box-container .box .price span{
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.membership .box-container .box .month{
+    font-size: 2rem;
+    color: #666;
+}
+
+.membership .box-container .box .list{
+    padding: 1rem 0;
+}
+
+.membership .box-container .box .list p{
+    font-size: 1.7rem;
+    color: #ccc;
+    line-height: 2;
+}
+
+.membership .box-container .box .list p i{
+    color: var(--primary);
+    padding-right: .5rem;
+}
+
+.membership .box-container .box .list p i.fa-times{
+    color: var(--white);
+}
+
+
+/* contact */
+.contact{
+    /* background: url(../images/bg.jpg) no-repeat; */
+    background-size: cover;
+    text-align: center;
+}
+
+.contact form{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.contact form .inputBox{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .inputBox input, 
+.contact form textarea{
+    height: 4rem;
+    width: 49%;
+    background: #222;
+    color: var(--white);
+    font-size: 2rem;
+    padding: 0 1rem;
+    margin: 1rem 0;
+    border: none;
+}
+
+.contact form .inputBox input:focus, 
+.contact form textarea:focus{
+    background: #383838;
+}
+
+.contact form textarea{
+    height: 20rem;
+    padding: 1rem;
+    width: 100%;
+    resize: none;
+}
+
+
+
+
+
+/* footer */
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    /* display: flex;
+    justify-content: space-around; */
+}
+
+.footer .box-container .box h3{
+    font-size: 2.2rem;
+    padding: 1rem 0;
+    color: var(--primary);
+}
+
+.footer .box-container .box p{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    color: var(--white);
+}
+
+.footer .box-container .box a i{
+    color: var(--primary);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box a:hover{
+    color: var(--primary);
+}
+
+.footer .share{
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer .share a{
+    font-size: 2rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    color: var(--primary);
+    border: .1rem solid var(--primary);
+    margin: .3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover{
+    color: var(--white);
+    background: var(--primary);
+}
+
+.footer .credit{
+    border-top: .1rem solid var(--primary);
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    padding: 1rem;
+    padding-top: 2rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.footer .credit span{
+    color: var(--primary);
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <header class="header">
+
+            <a href="#" class="logo"> <i class="fas fa-dumbbell"></i> Fitness Factory</a>
+
+            <nav class="navbar">
+                <a href="#" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Membership</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact us</a>
+            </nav>
+
+            <div id="menu" class="fas fa-bars"></div>
+        </header>
+
+
+        <!-- home -->
+        <section class="home" id="home">
+            <div class="content">
+                <h3>One stop destination for your <br> <span>health and fitness</span> <br>
+                    <!-- text after span --> </h3>
+                <p>Our goal is to make health and fitness attainable, affordable and approachable. <br> Welcome to
+                    fitness factory, the best gym in VIJAYAWADA.</p>
+                <a href="register.php" class="btn">Join now</a>
+            </div>
+        </section>
+
+
+        <!-- About -->
+        <section class="about" id="about">
+
+            <div class="row">
+
+                <div class="content">
+                    <span>ABOUT US</span>
+                    <h3>Build the perfect body shape for your good and healthy life !</h3>
+                    <p>Fitness Factory is pioneered by fitness experts and customized for anyone looking to make serious
+                        health and lifestyle transformation with the latest training techniques and methods, world
+                        class equipment, and internationally certified trainers.
+                        <br>
+                        Fitness Factory strives to help you accomplish your health and fitness goals. Join Fitness
+                        Factory
+                        today to be a part of the most complete fitness experience.
+                    </p>
+                    <ul>
+                        <li> <i class="fa-solid fa-check"></i> Certified trainers with the best equipment and proper
+                            space in gym </li>
+                        <li> <i class="fa-solid fa-check"></i> Online payment system, booking appointment and scheduling
+                            visits through website </li>
+                        <li> <i class="fa-solid fa-check"></i> Clean, safe, hygenic and welcoming environment for anyone
+                        </li>
+                        <li> <i class="fa-solid fa-check"></i> Cross-fits, yoga & meditation rooms, sports field,
+                            swimming pools are also available
+                        </li>
+                    </ul>
+                    <a href="#" class="btn">read more</a>
+                </div>
+
+                <div class="image">
+                    <img src="img/about.jpg" alt="gym image">
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- services -->
+        <section class="services" id="services">
+
+            <h1 class="heading">Our Services</h1>
+            <div class="box-container">
+
+                <div class="box">
+                    <img src="C:\Users\Shaik Nazeer\Fitness Factory\Fitness_factory\srv1.jpg" alt="">
+                    <div class="content">
+                        <h3>Personal Training</h3>
+                        <p>Best for one-on-one training to reach your ultimate fitness goals.</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="C:\Users\Shaik Nazeer\Fitness Factory\Fitness_factory\srv2.jpg" alt="">
+                    <div class="content">
+                        <h3>Flex Muscle</h3>
+                        <p>Make a way to flex your muscles and build the beast out of you.</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="C:\Users\Shaik Nazeer\Fitness Factory\Fitness_factory\srv3.jpg" alt="">
+                    <div class="content">
+                        <h3>Yoga</h3>
+                        <p>Yoga improves flexibility, strength and balance to your body.</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="C:\Users\Shaik Nazeer\Fitness Factory\Fitness_factory\srv4.jpg" alt="">
+                    <div class="content">
+                        <h3>Functional Fitness</h3>
+                        <p>The sole purpose is the make your body stronger, stable and agile.</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="C:\Users\Shaik Nazeer\Fitness Factory\Fitness_factory\srv5.jpg" alt="">
+                    <div class="content">
+                        <h3>Cardio</h3>
+                        <p>Cardio improves many aspects of health, including heart rate, mood, sleep, mental health,
+                            weight regulation and metabolism.</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="C:\Users\Shaik Nazeer\Fitness Factory\Fitness_factory\srv6.jpg" alt="">
+                    <div class="content">
+                        <h3>Free Weights</h3>
+                        <p>Free weights force you to use your muscles in a way that stabilizes the movement.</p>
+                        <a href="#" class="btn">read more</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Membership -->
+        <section class="membership" id="membership">
+
+            <h1 class="heading">Membership plans</h1>
+            <div class="box-container">
+
+                <div class="box">
+                    <h3>basic plan</h3>
+                    <div class="price"><span>₹ </span>1499 <span></span></div>
+                    <h3 class="month">2 months</h3>
+                    <div class="list">
+                        <p><i class="fas fa-check"></i> Yoga</p>
+                        <p><i class="fas fa-check"></i> Cardio</p>
+                        <p><i class="fas fa-check"></i> Weight lifting</p>
+                        <p><i class="fas fa-times"></i> Blog content</p>
+                        <p><i class="fas fa-times"></i> Personal training</p>
+                        <p><i class="fas fa-times"></i> Monthly medical tests</p>
+                    </div>
+                    <a href="#" class="btn">choose the plan</a>
+                </div>
+
+                <div class="box">
+                    <h3>standard plan</h3>
+                    <div class="price"><span>₹ </span>1999 <span></span></div>
+                    <h3 class="month">3 months</h3>
+                    <div class="list">
+                        <p><i class="fas fa-check"></i> Yoga</p>
+                        <p><i class="fas fa-check"></i> Cardio</p>
+                        <p><i class="fas fa-check"></i> Weight lifting</p>
+                        <p><i class="fas fa-check"></i> Blog content</p>
+                        <p><i class="fas fa-times"></i> Personal training</p>
+                        <p><i class="fas fa-times"></i> Monthly medical tests</p>
+                    </div>
+                    <a href="#" class="btn">choose the plan</a>
+                </div>
+
+                <div class="box">
+                    <h3>premium plan</h3>
+                    <div class="price"><span>₹ </span>2499 <span></span></div>
+                    <h3 class="month">3 months</h3>
+                    <div class="list">
+                        <p><i class="fas fa-check"></i> Yoga</p>
+                        <p><i class="fas fa-check"></i> Cardio</p>
+                        <p><i class="fas fa-check"></i> Weight lifting</p>
+                        <p><i class="fas fa-check"></i> Blog content</p>
+                        <p><i class="fas fa-check"></i> Personal training</p>
+                        <p><i class="fas fa-check"></i> Monthly medical tests</p>
+                    </div>
+                    <a href="#" class="btn">choose the plan</a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact us-->
+
+        <section class="contact" id="contact">
+
+            <h1 class="heading">Contact us</h1>
+
+            <form action="">
+
+                <div class="inputBox">
+                    <input type="text" placeholder="first name">
+                    <input type="text" placeholder="last name">
+                </div>
+
+                <div class="inputBox">
+                    <input type="email" placeholder="your email">
+                    <input type="text" placeholder="your number">
+                </div>
+
+                <textarea name="" id="" cols="30" rows="10" placeholder="your message"></textarea>
+
+                <a href="#" class="btn">Submit</a>
+
+            </form>
+
+        </section>
+
+        
+        <!-- footer -->
+        <section class="footer">
+
+            <div class="box-container">
+
+                <div class="box">
+                    <h3><i class="fas fa-dumbbell"></i> Fitness Factory</h3>
+                    <p>One stop destination for your health and fitness !!</p>
+                </div>
+
+                <div class="box">
+                    <h3>Contact info</h3>
+                    <a href="#"> <i class="fas fa-phone"></i> +91-98489 24288</a>
+                    <a href="#"> <i class="fas fa-phone"></i> +91-85550 12300</a>
+                    <a href="#"> <i class="fas fa-envelope"></i> fitnessfactory@gmail.com</a>
+                    <a href="#"> <i class="fas fa-map"></i> Vijayawada, India</a>
+                </div>
+
+                <div class="box">
+                    <h3>Quick links</h3>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> Home</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> About</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> Services</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> Membership</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> Blog</a>
+                </div>
+
+                <div class="box">
+                    <h3>Extra links</h3>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> My Account</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> Refund policy</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> Trainers</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> Store & products</a>
+                    <a href="#"> <i class="fas fa-arrow-right"></i> Terms & conditions</a>
+                </div>
+
+            </div>
+
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+
+            <div class="credit">All rights are reserved by <span>Pinkmoon Tech Pvt Ltd</span></div>
+
+        </section>
+
+
+
+        <!-- jquery cdn link  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- js link -->
+        <script src="js/script.js"></script>
+
+</body>
+
+</html>

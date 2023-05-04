@@ -1,0 +1,479 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap");
+
+:root{
+    
+    /* jungle-green */
+    --primary:#2A9D8F;
+    --white: #fff;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; 
+    border: none;
+    text-decoration: none;
+    /* text-transform: capitalize; */
+    list-style: none;
+    transition: .2s linear;
+}
+
+body{
+    background: #080b10;
+    color: var(--white);
+}
+
+section{
+    padding: 5rem 7%;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--primary);
+    border-radius: 5rem;
+}
+
+.heading{
+    font-size: 4rem;
+    color: var(--primary);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: 6rem;
+}
+
+.btn{
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: var(--box-shadow);
+    padding: .7rem 3rem;
+    border-radius: 5rem;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.btn::before,
+.btn::after{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    content: '';
+    background: #107166;
+    z-index: -1;
+    transition: .1s linear;
+}
+
+.btn::before{
+    left: 0;
+}
+
+.btn::after{
+    right: 0;
+}
+
+.btn:hover:before,
+.btn:hover::after{
+    width: 100%;
+}
+
+
+/* Navbar */
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 9%;
+}
+
+.header.active{
+    background: #040608;
+    padding: 2rem 9%;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--white);
+}
+
+.header .logo i{
+    padding-right: .5rem;
+    color: var(--primary);
+}
+
+.header .navbar a{
+    font-size: 2rem;
+    color: var(--white);
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover{
+    color: var(--primary);
+}
+
+.header .navbar a.active,
+.header .navbar a:hover{
+    color: var(--primary);
+}
+
+
+#menu{
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    color: var(--primary);
+    cursor: pointer;
+    display: none;
+}
+
+
+/* home */
+
+.home{
+    background-image: url("..img/mainbg.png");
+    background-repeat: no-repeat;
+    min-height: 110vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+}
+
+.home .content{
+    max-width: 55rem;
+}
+
+.home .content h3{
+    /* 7 is default */
+    font-size: 4.6rem; 
+    color: var(--white);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.home .content h3 span{
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.home .content p{
+    font-size: 1.4rem;
+    color: var(--white);
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+
+/* about */
+
+.about .row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about .row .content{
+    flex: 1 1 40rem;
+}
+
+.about .row .content span{
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.about .row .content h3{
+    font-size: 2.5rem;
+    color: var(--white);
+    padding: 1rem 0;
+}
+
+.about .row .content p{
+    font-size: 1.4rem;
+    color: var(--white);
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.about .row .content ul li{
+    font-size: 1.7rem;
+    color: var(--white);
+    padding-top: 1.5rem;
+}
+
+.about .row .content ul li i{
+    color: var(--primary);
+    padding-right: 1rem;
+}
+
+.about .row .content .btn{
+    margin: 3rem 0;
+}
+
+.about .row .image{
+    flex: 1 1 30rem;
+}
+
+.about .row .image img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* services */
+
+.services .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.services .box-container .box{
+    height: 25rem;
+    flex: 1 1 30rem;
+    border: 0.2rem solid var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.services .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.services .box-container .box .content{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    height: 100%;
+    width: 100%;
+    background: rgba(253, 253, 253, 0.878);
+    padding: 2rem;
+    padding-top: 5rem;
+    text-align: center;
+}
+
+.services .box-container .box:hover .content{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.services .box-container .box .content h3{
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.services .box-container .box .content p{
+    font-size: 1.5rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+
+
+/* membership */
+.membership .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.membership .box-container .box{
+    padding: 2rem;
+    text-align: center;
+    border: 0.1rem solid rgba(255, 255, 255, .2);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+}
+
+.membership .box-container .box h3{
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: var(--primary);
+    padding-top: 1rem;
+}
+
+.membership .box-container .box .price{
+    font-size: 6rem;
+    padding-top: 1rem;
+    font-weight: bolder;
+}
+
+.membership .box-container .box .price span{
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.membership .box-container .box .month{
+    font-size: 2rem;
+    color: #666;
+}
+
+.membership .box-container .box .list{
+    padding: 1rem 0;
+}
+
+.membership .box-container .box .list p{
+    font-size: 1.7rem;
+    color: #ccc;
+    line-height: 2;
+}
+
+.membership .box-container .box .list p i{
+    color: var(--primary);
+    padding-right: .5rem;
+}
+
+.membership .box-container .box .list p i.fa-times{
+    color: var(--white);
+}
+
+
+/* contact */
+.contact{
+    /* background: url(../images/bg.jpg) no-repeat; */
+    background-size: cover;
+    text-align: center;
+}
+
+.contact form{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.contact form .inputBox{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .inputBox input, 
+.contact form textarea{
+    height: 4rem;
+    width: 49%;
+    background: #222;
+    color: var(--white);
+    font-size: 2rem;
+    padding: 0 1rem;
+    margin: 1rem 0;
+    border: none;
+}
+
+.contact form .inputBox input:focus, 
+.contact form textarea:focus{
+    background: #383838;
+}
+
+.contact form textarea{
+    height: 20rem;
+    padding: 1rem;
+    width: 100%;
+    resize: none;
+}
+
+
+
+
+
+/* footer */
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    /* display: flex;
+    justify-content: space-around; */
+}
+
+.footer .box-container .box h3{
+    font-size: 2.2rem;
+    padding: 1rem 0;
+    color: var(--primary);
+}
+
+.footer .box-container .box p{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    color: var(--white);
+}
+
+.footer .box-container .box a i{
+    color: var(--primary);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box a:hover{
+    color: var(--primary);
+}
+
+.footer .share{
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer .share a{
+    font-size: 2rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    color: var(--primary);
+    border: .1rem solid var(--primary);
+    margin: .3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover{
+    color: var(--white);
+    background: var(--primary);
+}
+
+.footer .credit{
+    border-top: .1rem solid var(--primary);
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    padding: 1rem;
+    padding-top: 2rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.footer .credit span{
+    color: var(--primary);
+}
+
+
+
